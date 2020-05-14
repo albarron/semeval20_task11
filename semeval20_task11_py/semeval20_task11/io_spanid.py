@@ -22,7 +22,7 @@ def file_to_vectors(input):
     :param input: path to a tsv file with [id, start_span, end_span]
     :return: dictionary with id as key and a binary vector (1 where a span is covered)
     """
-    logger.info("Document %s", input)
+    logger.info("Reading document %s", input)
     df = pd.read_csv(input, header=None, sep="\t")
     grouped = df.groupby(0)
     my_vectors = {}
@@ -41,5 +41,38 @@ def file_to_vectors(input):
         logger.debug("Propagandist characters for id %s: %i", name, sum(vector))
     # print(my_vectors)
     return my_vectors
+
+def vectors_to_file(vectors, output):
+    """
+    Reads the Boolean vectors and stores them into a tsv file.
+    :param vectors: Dictionary with {doc_id: Boolean vector}
+    :param output: path to the output file
+    :return: None
+    """
+    logger.info("Writing vectors to %s", output)
+    # Convert the vector to dataframe
+    spans = []
+    # current = False
+
+    for id, vector in vectors.items():
+        print(len(vector))
+        print(np.where(vector == True))
+    #     for value in vector:
+    #         print(value)
+
+        exit()
+        # Find out if we can get the boundaries; otherwise, I need a for
+
+
+    df = pd.DataFrame(columns=[
+        0,  # document id
+        1,  # span beginning (incl)
+        2   # span ending (excl)
+        ])
+    # dfObj = dfObj.append({'User_ID': 23, 'UserName': 'Riti', 'Action': 'Login'}, ignore_index=True)
+
+    # Save the dataframe into a tsv
+    # pd.
+
 
 # vectors = file_to_vectors(ONE_PARTICIPANT_FILE)

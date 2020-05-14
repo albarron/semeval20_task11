@@ -1,5 +1,6 @@
 import logging
 import numpy as np
+import pandas as pd
 import os
 
 from semeval20_task11 import io_spanid
@@ -12,7 +13,7 @@ ONE_PARTICIPANT_FILE = "/Users/albarron/publications/semeval20_propaganda/data/s
 
 SI_SUBMISSIONS_PATH = "submissions_test_si"
 
-TOP = 2
+TOP = 1
 
 SI_RANKING_IDS = [
     "Hitachi",
@@ -171,7 +172,7 @@ def merge_vectors(vectors, wanted_teams):
             try:
                 merged[file_id] += vectors[team][file_id]
             except:
-                logging.info("%s lacks an input for %i", team, file_id)
+                logging.debug("%s lacks an input for %i", team, file_id)
         # relevant = [vector[file_id] for vector in ]
         # vector = vectors
         # None
@@ -181,21 +182,77 @@ def merge_vectors(vectors, wanted_teams):
 def compute_union(merged_vectors):
     # TODO check that this is working well
     boolean_vectors = {}
+    df = pd.DataFrame(columns=[
+        0,  # document id
+        1,  # span beginning (incl)
+        2  # span ending (excl)
+    ])
     for file_id in SI_FILES_IDS:
-        # try:
-        boolean_vectors[file_id] = merged_vectors[file_id] > 0
-        # except:
-        #     logging.info("No vector for $s exists", file_id)    # should never be exectuted
-    return boolean_vectors
+        try:
+            positive_tokens = np.where(merged_vectors[file_id] > 0)
+            boolean_vectors[file_id] = merged_vectors[file_id] > 0
+            df = df.append(positives_to_ranges(file_id, positive_tokens))
+        except:
+            logging.debug("No vector for $s exists", file_id)    # should never be exectuted
+    print(df)
+    print(df.ndim)
+    return df
+
+def positives_to_ranges(file_id, vector_of_positives):
+    """
+    Takes the file_id and the vector
+    :param file_id:
+                unique file identifier
+    :param vector_of_positives:
+                A vector which values represent the indexes where
+                a character belongs to the positive class.
+    :return:
+                Pandas dataframe with columns file_id, range_start, range_end.
+                As usual, the start is inclusive, whereas the end is exclusive.
+    """
+    into = False    # whether I am inside of an instance
+    ranges = []
+    # current = vector_of_positives[0][0]
+    for value in np.nditer(vector_of_positives):
+        new = int(value)
+        if not into:
+            # Beginning of the process. Get the starting position for the first snippet
+            snippet_start = new
+            into = True
+
+        elif new - current == 1:
+            # Nothing to do. Still in the same snippet
+            pass
+
+        else:
+            # Record the new range and reset the starting snippet
+            snippet_end = current
+            # The end is exclusive (hence + 1)
+            ranges.append([file_id, snippet_start, snippet_end+1])
+            snippet_start = new
+
+        # Update the current value
+        current = new
+
+    if snippet_start > snippet_end:   # TODO the conditional shouldn't be necessary. In all cases we should add a final one
+        # End of the process. Add the final snippet
+        ranges.append([file_id, snippet_start, new + 1])
+
+    df = pd.DataFrame(ranges)
+    # print(df)
+    return df
+    # TODO add the test that giving only one element should result in an identical file
+    # (this has been checked manually, by setting TOP = 1)
+
 
 def compute_inter(merged_vectors):
     # TODO check that this is working well
     boolean_vectors = {}
     for file_id in SI_FILES_IDS:
-        # try:
-        boolean_vectors[file_id] = merged_vectors[file_id] == TOP
-        # except:
-        #     logging.info("No vector for $s exists", file_id)    # should never be exectuted
+        try:
+            boolean_vectors[file_id] = merged_vectors[file_id] == TOP
+        except:
+            logging.debug("No vector for $s exists", file_id)    # should never be exectuted
     return boolean_vectors
 
 def compute_voting(merged_vectors):
@@ -203,12 +260,14 @@ def compute_voting(merged_vectors):
     # TODO check that this is working well
     boolean_vectors = {}
     for file_id in SI_FILES_IDS:
-        # try:
-        boolean_vectors[file_id] = merged_vectors[file_id] >= threshold
-        # except:
-        #     logging.info("No vector for $s exists", file_id)    # should never be exectuted
+        try:
+            boolean_vectors[file_id] = merged_vectors[file_id] >= threshold
+        except:
+            logging.info("No vector for $s exists", file_id)    # should never be exectuted
     return boolean_vectors
 
+def get_output_name(operation):
+    return str.format("si_%s_top_%s.tsv", (operation, TOP))
 
 wanted_teams = SI_RANKING_IDS[:TOP]
 all_vectors= {}
@@ -221,10 +280,12 @@ for team in wanted_teams:
 
 merged_vectors = merge_vectors(all_vectors, wanted_teams)
 
-union_vectors = compute_union(merged_vectors)
-inter_vectors = compute_inter(merged_vectors)
-voting_vectors = compute_voting(merged_vectors)
+df_union = compute_union(merged_vectors)
+# inter_vectors = compute_inter(merged_vectors)
+# voting_vectors = compute_voting(merged_vectors)
 
-
+io_spanid.vectors_to_file(df_union, get_output_name("union"))
+# io_spanid.vectors_to_file(inter_vectors, get_output_name("intersection"))
+# io_spanid.vectors_to_file(voting_vectors, get_output_name("voting"))
 print(len(all_vectors["Hitachi"]))
 
