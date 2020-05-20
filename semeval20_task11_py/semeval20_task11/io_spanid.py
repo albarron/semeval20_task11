@@ -2,11 +2,9 @@ import logging
 import numpy as np
 import pandas as pd
 
-# This is the length of file
-# propaganda-corpus-creation/data-created-before-annotations/semeval2020-test-raw-articles/selected_articles_anafora_format/batch4/Brexit/article820791520/article820791520
-# no file should be longer than this one (UNLESS SOMETHING IS WRONG) and
-# hence we are going to create vectors of this size
-MAXIMUM_LENGTH = 12596 # TODO there is at least one file with more. 12722 in si_Fragarach.tsv
+# File article820791520.txt is the longest one, with 12596 chars. We use the current value because team Fragarach has that value for span
+# 781672902       16552   16568
+MAXIMUM_LENGTH = 16568
 
 ONE_PARTICIPANT_FILE = "/Users/albarron/publications/semeval20_propaganda/data/submission/teams/Hitachi/test_si_Hitachi___2020-March-2__4_11_13.txt"
 
@@ -42,37 +40,17 @@ def file_to_vectors(input):
     # print(my_vectors)
     return my_vectors
 
-def vectors_to_file(vectors, output):
+def vectors_to_file(df, output):
     """
     Reads the Boolean vectors and stores them into a tsv file.
-    :param vectors: Dictionary with {doc_id: Boolean vector}
+    :param df:
+            Pandas dataframe with [doc_id, snippet_start, snippet_end]
     :param output: path to the output file
     :return: None
     """
-    logger.info("Writing vectors to %s", output)
-    # Convert the vector to dataframe
-    spans = []
-    # current = False
 
-    for id, vector in vectors.items():
-        print(len(vector))
-        print(np.where(vector == True))
-    #     for value in vector:
-    #         print(value)
-
-        exit()
-        # Find out if we can get the boundaries; otherwise, I need a for
-
-
-    df = pd.DataFrame(columns=[
-        0,  # document id
-        1,  # span beginning (incl)
-        2   # span ending (excl)
-        ])
-    # dfObj = dfObj.append({'User_ID': 23, 'UserName': 'Riti', 'Action': 'Login'}, ignore_index=True)
-
-    # Save the dataframe into a tsv
-    # pd.
+    df.to_csv(output, sep='\t', header=False, index=False)
+    logger.info("Snippets written to %s", output)
 
 
 # vectors = file_to_vectors(ONE_PARTICIPANT_FILE)

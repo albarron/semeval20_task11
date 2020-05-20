@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 numpy = "==1.18.4"
 pandas = "==1.0.3"
+matplotlib = "*"
 
 [requires]
 python_version = "3.8"
