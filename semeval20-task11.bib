@@ -67,6 +67,16 @@ abstract = "",
 crossref = "SemEval20"
 }
 
+@InProceedings{Kranzlein,
+author = "Kranzlein, Michael and
+  Behzad, Shabnam and
+  Goharian, Nazli",
+title = "{DoNotDistribute} at {SemEval}-2020 {T}ask 11: Features, Finetuning, and Data Augmentation in Neural Models for Propaganda Detection in News Articles",
+pages = "",
+abstract = "This paper presents our systems for SemEval 2020 Shared Task 11: Detection of Propaganda Techniques in News Articles. We participate in both the span identification and technique classification subtasks and report on experiments using different BERT-based models along with handcrafted features. Out models perform well above the baseline for both tasks, and we contribute ablation studies and discussion of our results to dissect the effectiveness of different features and techniques with the goal of aiding future studies in propaganda detection.",
+crossref = "SemEval20"
+}
+
 @InProceedings{Martinkovic,
 author = "Martinkovic, Matej and
   Pecar, Samuel and
@@ -94,6 +104,14 @@ title = "{BPGC} at {SemEval}-2020 {T}ask 11: {P}ropaganda Detection in News Arti
 pages = "",
 abstract = "Propaganda spreads the ideology and beliefs of like-minded people, brainwashing their audiences, and sometimes leading to violence. SemEval 2020 Task-11 aims to design automated systems for news propaganda detection. Task-11 consists of two sub-tasks, namely, Span Identification - given any news article, the system tags those specific fragments which contain at least one propaganda technique; and Technique Classification - correctly classify a given propagandist statement amongst 14 propaganda techniques. For sub-task 1, we use contextual embeddings extracted from pre-trained transformer models to represent the text data at various granularities and propose a multi-granularity knowledge sharing approach. For sub-task 2, we use an ensemble of BERT and logistic regression classifiers with linguistic features. Our results reveal that the linguistic features are the strong indicators for covering minority classes in a highly imbalanced dataset.",
 crossref = "SemEval20"
+}
+
+@inproceedings{petee2020propeval,  
+  author= "Petee, Maia and 
+     Palmer, Alexis",
+  title="{UNTLing} at {SemEval}-2020 {T}ask 11: Detection of Propaganda Techniques in News Articles",  
+  abstract = "Our system for the PropEval task explores the ability of semantic features to detect and label propagandistic rhetorical techniques in English news articles. For Subtask 2, labeling identified propagandistic fragments with one of fourteen technique labels, our system attains a micro-averaged F1 of 0.40; in this paper, we take a detailed look at the fourteen labels and how well our semantically-focused model detects each of them. We also propose strategies to fill the gaps.",
+  crossref = "SemEval20"
 }
 
 @InProceedings{Raj,
@@ -152,25 +170,4 @@ series = "EMNLP-IJCNLP 2019",
 year = "2019",
 address = "Hong Kong, China",
 month = "November",
-}
-
-@InProceedings{Kranzlein,
-author = "Kranzlein, Michael and
-  Behzad, Shabnam and
-  Goharian, Nazli",
-title = "{DoNotDistribute} at {SemEval}-2020 {T}ask 11: Features, Finetuning, and Data Augmentation in Neural Models for Propaganda Detection in News Articles",
-pages = "",
-abstract = "This paper presents our systems for SemEval 2020 Shared Task 11: Detection of Propaganda Techniques in News Articles. We participate in both the span identification and technique classification subtasks and report on experiments using different BERT-based models along with handcrafted features. Out models perform well above the baseline for both tasks, and we contribute ablation studies and discussion of our results to dissect the effectiveness of different features and techniques with the goal of aiding future studies in propaganda detection.",
-crossref = "SemEval20"
-}
-
-@inproceedings{petee2020propeval,
-  title="{UNTLing} at {SemEval}-2020 {T}ask 11: Detection of Propaganda Techniques in News Articles",
-  author= "Petee, Maia and 
-     Palmer, Alexis",
-  booktitle={{Proceedings of SemEval-2020: Task 11}},
-  pages = "",
-  abstract = "Our system for the PropEval task explores the ability of semantic features to detect and label propagandistic rhetorical techniques in English news articles. For Subtask 2, labeling identified propagandistic fragments with one of fourteen technique labels, our system attains a micro-averaged F1 of 0.40; in this paper, we take a detailed look at the fourteen labels and how well our semantically-focused model detects each of them. We also propose strategies to fill the gaps.",
-  year={2020}
-  crossref = "SemEval20"
 }
