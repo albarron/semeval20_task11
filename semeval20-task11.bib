@@ -1,14 +1,68 @@
-@InProceedings{1stLastname,
-author = "Lastname, Firstname and
-  Lastname, Firstname and
-  Lastname, Firstname",
-title = "{ADD TEAM} at {SemEval}-2020 {T}ask 11: ADD TITLE",
+@InProceedings{SemEval20-11-DaSanMartino,
+author = "Da San Martino, Giovanni and
+  Barr\'{o}n-Cede\~no, Alberto and
+  Wachsmuth, Henning and
+  Petrov, Rostislav and
+  Nakov, Preslav",
+ title = "{SemEval}-2020 Task 11: {D}etection of Propaganda Techniques in News 
+Articles",
+ pages = "",
+ abstract = "We describe the outcome of the SemEval 2020 Task 11 on the 
+	detection of propaganda in news articles. We present two tasks. In the 
+	first task, systems are asked to identify specific text spans in a free 
+	text where propaganda is being applied. In the second task, systems are 
+	asked to identify the propaganda technique being applied in a text span. We 
+	describe the construction of the evaluation framework (dataset and 
+	evaluation metrics) as well as the approaches explored by the different 
+	participants. ",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Altiti,
+author = "Altiti, Ola and 
+		Abdullah, Malak and 
+		Obiedat, Rasha",
+title = "{JUST} at {SemEval}-2020 {T}ask 11: {D}etecting Propaganda Techniques using {BERT} Pretrained Model",
+pages = "",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Arsenos,
+author = "Arsenos, Anastasios and
+  Siolas, Georgios",
+title = "{NTUAAILS} at {SemEval}-2020 {T}ask 11: {P}ropaganda Detection and
+ Classification with biLSTMs and ELMo",
+pages = "",
+abstract = "This paper describes the NTUAAILS submission for SemEval 2020 Task 
+	11 Detection of Propaganda Techniques in News Articles. This task comprises 
+	of two different sub-tasks, namely A: Span Identification (SI), B: 
+	Technique Classification (TC). The goal for the SI sub-task is to identify 
+	specific fragments, in a given plain text, containing at least one 
+	propaganda technique. The TC sub-task aims to identify the applied 
+	propaganda technique in a given text fragment. A different model was 
+	trained for each sub-task. Our best performing system for the SI task 
+	consists	of pre-trained ELMo word embeddings followed by residual 
+	bidirectional LSTM network. For	the TC sub-task pre-trained word embeddings 
+	from GloVe fed to a bidirectional LSTM neural network. The models achieved 
+	rank 28 among 36 teams with F1 score of 0.335 and rank 25 among 31 teams 
+	with 0.463 F1 score for SI and TC sub-tasks respectively. Our results 
+	indicate that the proposed deep learning models, although relatively simple 
+	in architecture and fast to train, achieve satisfactory results in the tasks 
+	on hand.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Bairaktaris,
+author = "Bairaktaris, Anastasios and 
+		Symeonidis, Symeon and 
+		Arampatzis, Avi",
+title = "{DUTH} at {SemEval}-2020 {T}ask 11: BERT with Entity Mapping for Propaganda Classification",
 pages = "",
 abstract = "ADD ABSTRACT",
 crossref = "SemEval20"
 }
 
-@InProceedings{Blaschke,
+@InProceedings{SemEval20-11-Blaschke,
 author = "Blaschke, Verena and
   Korniyenko, Maxim and
   Tureski, Sam",
@@ -18,101 +72,449 @@ abstract = "This paper describes our participation in the SemEval-2020 task Dete
 crossref = "SemEval20"
 }
 
-@InProceedings{Chauhan, 
-author = "Chauhan,Aniruddha and Diddee, Harshita",
-title = "{PsuedoProp} at {SemEval}-2020 {T}ask 11:Propaganda Span Detection using BERT-CRF and Ensemble Sentence Level Classifier",
-pages = "",
-abstract = "This paper presents our solution for Span Identification (SI) Task under “Task 11: Detection of Propaganda Techniques in News Articles” of SemEval 2020.This task aims to identify if a given sentence, taken from a corpus of news articles, contains a propaganda span and hence aims to identify the character level offsets of the identified propaganda element. Our solution proposes a sequential approach in which the span identification is preceded by an ensemble sentence level classifier (SLC).We only perform span identification on those samples which are flagged as propaganda samples by the SLC Model. We perform token level classification by fine-tuning BERT and use CRF to perform sequence tagging. Additionally, we present our analysis on different voting ensembles for the SLC model. Our system ranks 14th on the test set and 22nd on the development set and with an F1 score of 0.41 and 0.39 respectively.",
-crossref = "SemEval20" 
+@InProceedings{SemEval20-11-Chauhan,
+ author = "Chauhan, Aniruddha and Diddee, Harshita",
+ title = "{PsuedoProp} at {SemEval}-2020 {T}ask 11: {P}ropaganda Span Detection 
+using BERT-CRF and Ensemble Sentence Level Classifier",
+ pages = "",
+ abstract = "This paper presents our solution for Span Identification (SI) Task 
+	under “Task 11: Detection of Propaganda Techniques in News Articles” of 
+	SemEval 2020.This task aims to identify if a given sentence, taken from a 
+	corpus of news articles, contains a propaganda span and hence aims to 
+	identify the character level offsets of the identified propaganda 
+	element. Our solution proposes a sequential approach in which the span 
+	identification is preceded by an ensemble sentence level classifier 
+	(SLC). We only perform span identification on those samples which are 
+	flagged as propaganda samples by the SLC Model. We perform token level 
+	classification by fine-tuning BERT and use CRF to perform sequence tagging. 
+	Additionally, we present our analysis on different voting ensembles for the 
+	SLC model. Our system ranks 14th on the test set and 22nd on the development 
+	set and with an F1 score of 0.41 and 0.39 respectively.",
+ crossref = "SemEval20"
 }
 
-@InProceedings{Dementieva,
-author = "Dementieva, Daryna and
-  Markov, Igor and
-  Panchenko, Alexander",
-title = "SkoltechNLP at SemEval-2020 Task 11: Exploring Unsupervised Text Augmentation for Propaganda Detection",
-pages = "",
-abstract = "This paper presents a solution for the Span Identification (SI) task in the ''Detection of Propaganda Techniques in News Articles'' competition at SemEval-2020. The goal of the SI task is to identify specific fragments of each article which contain the use of at least one propaganda technique. This is a binary sequence tagging task. We tested several approaches finally selecting a fine-tuned BERT model as our baseline model. Our main contribution is an investigation of several unsupervised data augmentation techniques based on distributional semantics expanding the original small training dataset as applied to this BERT-based sequence tagger. We show that, although increases in F1 score are not significant, usage of some expansion strategies can lead to discrete improvements in precision and recall.",
+@InProceedings{SemEval20-11-Chernyavskiy,
+ author = "Chernyavskiy, Anton and 
+	Ilvovsky, Dmitry and 
+	Nakov, Preslav",
+ title = "{aschern} at {SemEval}-2020 {T}ask 11: {I}t Takes Three to {T}ango: 
+{RoBERTa}, {CRF}, and Transfer Learning",
+ pages = "",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Dao,
+ author = "Dao, Jiaxu and
+  Wang, Jin and
+  Zhang, Xuejie",
+ title = "{YNU-HPCC} at {SemEval}-2020 {T}ask 11: LSTM Network for Detection of 
+	Propaganda Techniques in News Articles",
+ pages = "",
+ abstract = "This paper summarizes our studies on propaganda detection 
+	techniques for news articles in the SemEval-2020 task 11. This task is 
+	divided into the SI and TC subtasks. We implemented the GloVe word 
+	representation, the BERT pretraining model, and the LSTM model architecture 
+	to accomplish this task. Our approach achieved good results for both the SI 
+	and TC subtasks. The macro-F1-score for the SI subtask is 0.406, and the 
+	micro-F1-score for the TC subtask is 0.505. Our method significantly 
+	outperforms the officially released baseline method, and the SI and TC 
+	subtasks rank 17th and 22nd, respectively, for the test set. This paper 
+	also compares the performances of different deep learning model 
+	architectures, such as the Bi-LSTM, LSTM, BERT, and XGBoost models, on the 
+	detection of news promotion techniques.",
 crossref = "SemEval20"
 }
 
-@InProceedings{Jurkiewicz,
+@InProceedings{SemEval20-11-Daval-Frerot,
+ author = "Daval-Frerot, Guillaume and
+  Yannick, Weis",
+ title = "{WMD} at {SemEval}-2020 {T}asks 7 and 11: Assessing humor and 
+propaganda using Unsupervised Data Augmentation",
+ pages = "",
+ abstract = "In this work, we combine the state-of-the-art BERT architecture 
+	with the semi-supervised learning technique UDA in order to exploit 
+	unlabeled raw data to assess humor and detect propaganda in the tasks 7 
+	and 11 of the SemEval-2020 competition. The use of UDA shows promising 
+	results with a systematic improvement of the performances over the four 
+	different subtasks, and even outperforms supervised learning with the 
+	additional labels of the Funlines dataset.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Dementieva,
+author = "Dementieva, Daryna and
+  Markov, Igor and
+  Panchenko, Alexander",
+title = "{SkoltechNLP} at {SemEval}-2020 {T}ask 11: {E}xploring Unsupervised 
+Text Augmentation for Propaganda Detection",
+pages = "",
+abstract = "This paper presents a solution for the Span Identification (SI) task 
+	in the ``Detection of Propaganda Techniques in News Articles'' competition 
+	at SemEval-2020. The goal of the SI task is to identify specific fragments 
+	of each article which contain the use of at least one propaganda 
+	technique. This is a binary sequence tagging task. We tested several 
+	approaches finally selecting a fine-tuned BERT model as our baseline model. 
+	Our main contribution is an investigation of several unsupervised data 
+	augmentation techniques based on distributional semantics expanding the 
+	original small training dataset as applied to this BERT-based sequence 
+	tagger. We show that, although increases in F1 score are not significant, 
+	usage of some expansion strategies can lead to discrete improvements in 
+	precision and recall.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Dewantara,
+ author = "Dewantara, Dimas Sony and 
+		Budi, Indra and 
+		Ibrohim, Muhammad Okky",
+ title = "{3218IR} at {SemEval}-2020 {T}ask 11: {Conv1D} and Word Embedding in 
+ Propaganda Span Identification at News Articles",
+ pages = "",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Dimov,
+ author = "Dimov, Ilya and
+	Korzun, Vladislav and
+	Smurov, Ivan",
+ title = "{NoPropaganda} at {SemEval}-2020 {T}ask 11: {A} Borrowed Approach to 
+Sequence Tagging and Text Classification",
+ pages = "",
+ abstract = "This paper describes our contribution to SemEval-2020 Task 11: 
+	Detection Of Propaganda Techniques In News Articles. We start with simple 
+	LSTM baselines and move to an autoregressive transformer decoder to predict 
+	long continuous propaganda spans for the first subtask. We also adopt an 
+	approach from relation extraction by enveloping spans mentioned above with 
+	special tokens for the second subtask of propaganda technique 
+	classification. Our models report an F-score of 44.6% and a micro-averaged 
+	F-score of 58.2% for those tasks accordingly.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Ermurachi,
+ author = "Ermurachi, Vlad and 
+	Gifu, Daniela",
+ title = "{UAIC1860} at {SemEval}-2020 {T}ask 11: Detection of Propaganda 
+	Techniques in News Articles",
+ pages = "",
+ abstract = "ADD ABSTRACT",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Grigorev,
+ author = "Grigorev, Dmitry and 
+	Ivanov, Vladimir",
+ title = "{Inno} at {SemEval}-2020 {T}ask 11: Leveraging Pure Transfomer for 
+Multi-Class Propaganda Detection",
+ pages = "",
+ abstract = "ADD ABSTRACT",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Jiang,
+ author = "Jiang, Yunzhe and 
+		G\^{a}rbacea, Cristina and 
+		Mei, Qiaozhu",
+ title = "{UMSIForeseer} at {SemEval}-2020 {T}ask 11: {P}ropaganda Detection by 
+Fine-Tuning {BERT} with Resampling and Ensemble Learning",
+ pages = "",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Jurkiewicz,
 author = "Jurkiewicz, Dawid and
   Borchmann, {\L}ukasz and
   Kosmala, Izabela and
   Grali{\'n}ski, Filip",
-title = "{ApplicaAI} at {SemEval}-2020 {T}ask 11:  On {RoBERTa-CRF}, {Span} {CLS} and Whether Self-Training Helps Them",
-pages = "",
-abstract = "This paper presents the winning system for the propaganda Technique Classification (TC) task and the second-placed system for the propaganda Span Identification (SI) task. The purpose of TC task was to identify an applied propaganda technique given propaganda text fragment. The goal of SI task was to find specific text fragments which contain at least one propaganda technique. Both of the developed solutions used semi-supervised learning technique of self-training. Interestingly, although CRF is barely used with transformer-based language models, the SI task was approached with RoBERTa-CRF architecture. An ensemble of RoBERTa-based models was proposed for the TC task, with one of them making use of Span CLS layers we introduce in the present paper. In addition to describing the submitted systems, an impact of architectural decisions and training schemes is investigated along with remarks regarding training models of the same or better quality with lower computational budget. Finally, the results of error analysis are presented.",
+ title = "{ApplicaAI} at {SemEval}-2020 {T}ask 11:  On {RoBERTa-CRF}, {Span} 
+{CLS} and Whether Self-Training Helps Them",
+ pages = "",
+ abstract = "This paper presents the winning system for the propaganda Technique 
+	Classification (TC) task and the second-placed system for the propaganda 
+	Span Identification (SI) task. The purpose of TC task was to identify an 
+	applied propaganda technique given propaganda text fragment. The goal of SI 
+	task was to find specific text fragments which contain at least one 
+	propaganda technique. Both of the developed solutions used semi-supervised 
+	learning technique of self-training. Interestingly, although CRF is barely 
+	used with transformer-based language models, the SI task was approached 
+	with RoBERTa-CRF architecture. An ensemble of RoBERTa-based models was 
+	proposed for the TC task, with one of them making use of Span CLS layers we 
+	introduce in the present paper. In addition to describing the submitted 
+	systems, an impact of architectural decisions and training schemes is 
+	investigated along with remarks regarding training models of the same or 
+	better quality with lower computational budget. Finally, the results of 
+	error analysis are presented.",
 crossref = "SemEval20"
 }
 
-@InProceedings{Kaas,
-author = "Kaas, Anders Friis and
+@InProceedings{SemEval20-11-Kaas,
+ author = "Kaas, Anders Friis and
   Thomsen, Viktor Torp and
   Plank, Barbara",
-title = "Team {DiSaster} at {SemEval}-2020 {T}ask 11: Combining {BERT} and hand-crafted features for Identifying Propaganda Techniques in News",
-pages = "",
-abstract = "",
+ title = "Team {DiSaster} at {SemEval}-2020 {T}ask 11: Combining {BERT} and 
+hand-crafted features for Identifying Propaganda Techniques in News",
+ pages = "",
+ abstract = "",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Khosla,
+ author = "Khosla, Sopan and 
+		Joshi, Rishabh and 
+		Dutt, Ritam and 
+		Black, Alan W. and 
+		Tsvetkov, Yulia",
+ title = "{LTIatCMU} at {SemEval}-2020 {T}ask 11: {I}ncorporating Multi-Level 
+Features for Multi-Granular Propaganda Span Identification",
+ pages = "",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Kim,
+author = "Kim, Moonsung and
+  Bethard, Steven",
+ title = "{TTUI} at {SemEval}-2020 {T}ask 11: Propaganda Detection with Transfer 
+learning and Ensembles",
+ pages = "",
+ abstract = "In this paper, we describe our approaches and systems for the 
+	SemEval-2020 Task 11 on propaganda technique detection. We fine-tuned BERT 
+	and RoBERTa pre-trained models then merged them with an average ensemble. 
+	We conducted several experiments for in- put representations dealing with 
+	long texts and preserving context as well as for the imbalanced class 
+	problem. Our system ranked 21st out of 36 teams with 0.398 F1 in the SI task 
+	and 14th out of 31 teams with 0.556 F1 in the TC task. Our code is available 
+	at https://github.com/amenra99/SemEval2020_Task11.",
 crossref = "SemEval20"
 }
 
-@InProceedings{Martinkovic,
-author = "Martinkovic, Matej and
+@InProceedings{SemEval20-11-Kranzlein,
+ author = "Kranzlein, Michael and 
+    Behzad, Shabnam and 
+    Goharian, Nazli ",
+ title = "{DoNotDistribute} at {SemEval}-2020 {T}ask 11: {F}eatures, Finetuning,
+and Data Augmentation in Neural Models for Propaganda Detection in News 
+Articles",
+ pages = "",
+ abstract = "This paper presents our systems for SemEval 2020 Shared Task 11: 
+	Detection of Propaganda Techniques in News Articles. We participate in both 
+	the span identification and technique classification subtasks and report 
+	on experiments using different BERT-based models along with handcrafted 
+	features. Our models perform well above the baselines for both tasks, and 
+	we contribute ablation studies and discussion of our results to dissect 
+	the effectiveness of different features and techniques with the goal of 
+	aiding future studies in propaganda detection.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Krishnamurthy,
+ author = "Krishnamurthy, Gangeshwar and 
+		Gupta, Raj Kumar and 
+		Yangi, Yinping",
+ title = "{SocCogCom} at {SemEval}-2020 {T}ask 11: Detecting Propaganda 
+Techniques in News Articles using Semantic-Level Emotional Salience Features",
+ pages = "",
+ abstract = "ADD ABSTRACT",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Li,
+ author = "Li, Jinfen and Xiao, Lu",
+ title = "{HybridPro} at {SemEval}-2020 {T}ask 11: A Hybrid Model For 
+Propagandistic Technique Classification In News Articles",
+ pages = "",
+ abstract = "ADD ABSTRACT",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Martinkovic,
+ author = "Martinkovic, Matej and
   Pecar, Samuel and
   Simko, Marian",
-title = "NLFIIT at {SemEval}-2020 Task 11: Neural Network Architectures for Detection of Propaganda Techniques in News Articles",
-pages = "",
-abstract = "Since propaganda became more common technique in news, it is very important to look for possibilities of its automatic detection. In this paper, we present neural model architecture submitted to the SemEval-2020 Task 11 competition: Detection of Propaganda Techniques in News Articles. We participated in both subtasks, propaganda span identification and propaganda technique classification. Our model uses recurrent Bi-LSTM layers and also takes advantage of self-attention mechanism. Our model managed to achieve score 0.405 F1 for subtask 1 and 0.553 F1 for subtask 2 resulting in 18th and 16th place in subtask 1 and subtask 2, respectively.",
+ title = "{NLFIIT} at {SemEval}-2020 {T}ask 11: {N}eural Network Architectures 
+for Detection of Propaganda Techniques in News Articles",
+ pages = "",
+ abstract = "Since propaganda became more common technique in news, it is very 
+	important to look for possibilities of its automatic detection. In this 
+	paper, we present neural model architecture submitted to the SemEval-2020 
+	Task 11 competition: Detection of Propaganda Techniques in News Articles. We 
+	participated in both subtasks, propaganda span identification and propaganda 
+	technique classification. Our model uses recurrent Bi-LSTM layers and also 
+	takes advantage of self-attention mechanism. Our model managed to achieve 
+	score 0.405 F1 for subtask 1 and 0.553 F1 for subtask 2 resulting in 18th 
+	and 16th place in subtask 1 and subtask 2, respectively.",
 crossref = "SemEval20"
 }
 
-@InProceedings{Paraschiv,
-author = "Paraschiv, Andrei and
-  Cercel, Dumitru-Clementin",
-title = "UPB at {SemEval}-2020 Task 11: Propaganda Detection with Domain-Specific Trained BERT",
+@InProceedings{SemEval20-11-Mikhalkova,
+author = "Mikhalkova, Elena and 
+      Ganzherli,Nadezhda and 
+      Glazkova, Anna and 
+      Bidulia, Yulia ",
+title = "UTMN at {SemEval}-2020 Task 11: {A} Kitchen Solution to Automatic
+Propaganda Detection",
 pages = "",
-abstract = "This paper describes our participation in the Semeval 2020, Task 11 - detection of propaganda techniques in news articles competition. By furthering the unsupervised pre-training of the standard BERT model, we specialize the model on propagandistic and hyperpartisan news articles, allowing it to find better representations for the two subtasks - propaganda span detection and propaganda technique classification. Our proposed system achieved in subtask SI a F1 score of 46.06\%, ranking 5th in the leaderboard and for subtask TC an overall F1 average of 54.302\% ranking 19th from 32 teams.",
+abstract = "The article describes a solution to propaganda detection at 
+	SemEval-2020 based on feature adjustment. The authors describe how they 
+	handle class and feature imbalance by testing the size of context windows, 
+	number of samples of two classes (propaganda and none) and some other. The 
+	result of the system at the SemEval2020 Task 11 is fscore = 0:37.",
 crossref = "SemEval20"
 }
 
-@InProceedings{Raj,
-author = "Raj, Mayank and 
-Jaiswal, Ajay and R.R, Rohit and 
-Gupta, Ankita and 
-Sahoo, Sudeep and 
-Srivastava,Vertika and 
-Yeon Hyang ,Kim ",
-title = "Solomon at {SemEval}-2020 {T}ask 11: Novel Ensemble Architechture for Fine-Tuned Propoganda Detection in News Articles",
-pages = "",
-abstract = "This paper describes our system (Solomon) details and results of participation in the SemEval 2020 Task 11 ”Detection of Propaganda Techniques in News Articles”. We participated in Task ”Technique Classification” (TC) which is a multi-class classification task. To address the TC task, we used RoBERTa based transformer architecture for fine-tuning on the propaganda dataset. The predictions of RoBERTa were further fine-tuned by class-dependent-minority-class classifiers. A special classifier, which employs dynamically adapted Least Common Sub-sequence algorithm, is used to adapt to the intricacies of repetition class. Compared to the other participating systems,our submission is ranked 4th on the leaderboard.",
+@InProceedings{SemEval20-11-Morio,
+ author = "Morio, Gaku and 
+		Morishita, Terufumi and 
+		Ozaki, Hiroaki and 
+		Miyoshi, Toshinori",
+ title = "{Hitachi} at {SemEval}-2020 {T}ask 11: An Empirical Study of 
+Pre-Trained Transformer Family for Propaganda Detection",
+ pages = "",
+ abstract = "ADD ABSTRACT",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Paraschiv,
+ author = "Paraschiv, Andrei and
+  Cercel, Dumitru-Clementin and Dascalu, Mihai",
+ title = "{UPB} at {SemEval}-2020 {T}ask 11: {P}ropaganda Detection with 
+Domain-Specific Trained BERT",
+ pages = "",
+ abstract = "This paper describes our participation in the Semeval 2020, Task 
+	11 - detection of propaganda techniques in news articles competition. By 
+	furthering the unsupervised pre-training of the standard BERT model, we 
+	specialize the model on propagandistic and hyperpartisan news articles, 
+	allowing it to find better representations for the two subtasks - 
+	propaganda span detection and propaganda technique classification. Our 
+	proposed system achieved in subtask SI a F1 score of 46.06\%, ranking 5th 
+	in the leaderboard and for subtask TC an overall F1 average of 54.302\% 
+	ranking 19th from 32 teams.",
 crossref = "SemEval20"
 }
 
-@InProceedings{Verma,
-author = "Verma, Ekansh  and 
+@InProceedings{SemEval20-11-Patil,
+ author = "Patil, Rajaswa and
+  Singh, Somesh and
+  Agarwal, Swati",
+ title = "{BPGC} at {SemEval}-2020 {T}ask 11: {P}ropaganda Detection in News 
+Articles with Multi-Granularity Knowledge Sharing and Linguistic Features based 
+Ensemble Learning",
+ pages = "",
+ abstract = "Propaganda spreads the ideology and beliefs of like-minded people, 
+	brainwashing their audiences, and sometimes leading to violence. SemEval 
+	2020 Task-11 aims to design automated systems for news propaganda 
+	detection. Task-11 consists of two sub-tasks, namely, Span Identification - 
+	given any news article, the system tags those specific fragments which 
+	contain at least one propaganda technique; and Technique Classification - 
+	correctly classify a given propagandist statement amongst 14 propaganda 
+	techniques. For sub-task 1, we use contextual embeddings extracted from 
+	pre-trained transformer models to represent the text data at various 
+	granularities and propose a multi-granularity knowledge sharing approach. 
+	For sub-task 2, we use an ensemble of BERT and logistic regression 
+	classifiers with linguistic features. Our results reveal that the linguistic 
+	features are the strong indicators for covering minority classes in a highly 
+	imbalanced dataset.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Petee,
+author = "Petee, Maias and
+  Palmer, Alexis",
+title = "{UNTLing} at {SemEval}-2020 {T}ask 11: Detection of Propaganda 
+Techniques in News Articles",
+pages = "",
+abstract = "Our system for the PropEval task explores the ability of semantic 
+	features to detect and label propagandistic rhetorical techniques in 
+	English news articles. For Subtask 2, labeling identified propagandistic 
+	fragments with one of fourteen technique labels, our system attains a 
+	micro-averaged F1 of 0.40; in this paper, we take a detailed look at the 
+	fourteen labels and how well our semantically-focused model detects each of 
+	them. We also propose strategies to fill the gaps.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Raj,
+ author = "Raj, Mayank and 
+	Jaiswal, Ajay and R.R, Rohit and 
+	Gupta, Ankita and 
+	Sahoo, Sudeep and 
+	Srivastava,Vertika and 
+	Yeon Hyang ,Kim ",
+ title = "Solomon at {SemEval}-2020 {T}ask 11: {N}ovel Ensemble Architechture 
+for Fine-Tuned Propoganda Detection in News Articles",
+ pages = "",
+ abstract = "This paper describes our system (Solomon) details and results of 
+	participation in the SemEval 2020 Task 11 ”Detection of Propaganda 
+	Techniques in News Articles”. We participated in Task ”Technique 
+	Classification” (TC) which is a multi-class classification task. To address 
+	the TC task, we used RoBERTa based transformer architecture for fine-tuning 
+	on the propaganda dataset. The predictions of RoBERTa were further 
+	fine-tuned by class-dependent-minority-class classifiers. A special 
+	classifier, which employs dynamically adapted Least Common Sub-sequence 
+	algorithm, is used to adapt to the intricacies of repetition class. Compared 
+	to the other participating systems,our submission is ranked 4th on the 
+	leaderboard.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Singh,
+ author = "Singh, Paramansh and 
+			Sandhu, Siraj and 
+			Kumar, Subham and 
+			Modi, Ashutosh",
+ title = "{newsSweeper} at {SemEval}-2020 {T}ask 11: Context-Aware Rich Feature 
+ Representations For Propaganda Classification",
+ pages = "",
+ abstract = "ADD ABSTRACT",
+ crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Tao,
+ author = "Tao, Xin and
+  Zhou, Xiaobing",
+ title = "{YNUtaoxin} at {SemEval}-2020 {T}ask 11: {I}dentification Fragments 
+of Propaganda Technique by Neural Sequence Labeling Models with Different 
+Tagging Schemes and Pre-trained Language Model",
+ pages = "",
+ abstract = "Information extraction is a hot topic in NLP, and detecting the use 
+	of propaganda technique in news articles is part of this kind of task. This 
+	paper describes the solution of the Span Identification(SI) task in the 
+	Semeval 2020 Task 11: Detection of Propaganda Techniques in News Articles. 
+	The core idea of our method is equivalent to regard this task as a sequence 
+	tagging task and develop a neural sequence model to solve it. We use three 
+	different tagging schemes to tag sentences. Some pre-trained language 
+	models are used as feature encoder like BERT, RoBERTa and XLNet. In the 
+	final evaluation, we achieve an F1-score of 0.43208, and rank 11th among 
+	all the submitted teams.",
+crossref = "SemEval20"
+}
+
+@InProceedings{SemEval20-11-Verma,
+ author = "Verma, Ekansh  and
         Motupalli, Vinodh and
         Chakraborty, Souradip",
-title = "{Transformers} at {SemEval}-2020 {T}ask 11: Propaganda Fragment Detection using Diversified BERT Architectures based Ensemble Learning",
-pages = "",
-abstract = "In this paper, we present our approach for the ’Detection of Propaganda Techniques in NewsArticles’ task as a part of the 2020 edition of International Workshop on Semantic Evaluation.The specific objective of this task is to identify and extract the text segments in which propagandatechniques are used.  We propose a multi-system deep learning framework that can be used toidentify the presence of propaganda fragments in a news article and also deep dive into the diverseenhancements of BERT architecture which are part of the final solution. Our proposed final modelgave an F1-score of 0.48 on the test dataset.",
+ title = "{Transformers} at {SemEval}-2020 {T}ask 11: {P}ropaganda Fragment 
+Detection using Diversified BERT Architectures based Ensemble Learning",
+ pages = "",
+ abstract = "In this paper, we present our approach for the ’Detection of 
+	Propaganda Techniques in NewsArticles’ task as a part of the 2020 edition 
+	of International Workshop on Semantic Evaluation.The specific objective of 
+	this task is to identify and extract the text segments in which propaganda 
+	techniques are used. We propose a multi-system deep learning framework that
+	can be used toidentify the presence of propaganda fragments in a news 
+	article and also deep dive into the diverseenhancements of BERT architecture 
+	which are part of the final solution. Our proposed final modelgave an 
+	F1-score of 0.48 on the test dataset.",
 crossref = "SemEval20"
 }
 
 
-@InProceedings{DaSanMartinoSemeval20task11,
-author = "Da San Martino, Giovanni and
-  Barr\'{o}n-Cede\~no, Alberto and
-  Wachsmuth, Henning and
-  Petrov, Rostislav and
-  Nakov, Preslav",
-title = "{SemEval}-2020 Task 11: Detection of Propaganda Techniques in News Articles",
-pages = "",
-abstract = "We describe the outcome of the SemEval 2020 Task 11 on the detection of propaganda in news articles. We present two tasks. In the first task, systems are asked to identify specific text spans in a free text where propaganda is being applied. In the second task, systems are asked to identify the propaganda technique being applied in a text span. We describe the construction of the evaluation framework (dataset and evaluation metrics) as well as the approaches explored by the different participants. ",
-crossref = "SemEval20"
-}
+%%%%%%%%%%%%
+%%%%%%%%%%%%
+
+
 
 @proceedings{SemEval20,
+title = "Proceedings of the 14th International Workshop on Semantic Evaluation",
 booktitle = "Proceedings of the 14th International Workshop on Semantic Evaluation",
 series = "SemEval 2020",
 year = "2020",
@@ -134,12 +536,3 @@ address = "Hong Kong, China",
 month = "November",
 }
 
-@InProceedings{Patil,
-author = "Patil, Rajaswa and
-  Singh, Somesh and
-  Agarwal, Swati",
-title = "{BPGC} at {SemEval}-2020 {T}ask 11: Propaganda Detection in News Articles with Multi-Granularity Knowledge Sharing and Linguistic Features based Ensemble Learning",
-pages = "",
-abstract = "Propaganda spreads the ideology and beliefs of like-minded people, brainwashing their audiences, and sometimes leading to violence. SemEval 2020 Task-11 aims to design automated systems for news propaganda detection. Task-11 consists of two sub-tasks, namely, Span Identification - given any news article, the system tags those specific fragments which contain at least one propaganda technique; and Technique Classification - correctly classify a given propagandist statement amongst 14 propaganda techniques. For sub-task 1, we use contextual embeddings extracted from pre-trained transformer models to represent the text data at various granularities and propose a multi-granularity knowledge sharing approach. For sub-task 2, we use an ensemble of BERT and logistic regression classifiers with linguistic features. Our results reveal that the linguistic features are the strong indicators for covering minority classes in a highly imbalanced dataset.",
-crossref = "SemEval20"
-}
